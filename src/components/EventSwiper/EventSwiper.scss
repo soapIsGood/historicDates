@@ -1,0 +1,74 @@
+.eventsSwiperWrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+
+  .swiper {
+    width: 100%;
+  }
+
+  .card {
+    border-radius: 12px;
+    background: #fff;
+    width: 320px;
+    max-width: 400px;
+    z-index: 0;
+
+    .date {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 120%;
+      color: blue;
+      padding-bottom: 15px;
+    }
+
+    p {
+      font-size: 20px;
+      color: darkblue;
+      font-family: 'PT Sans', sans-serif;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  }
+
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+    user-select: none;
+
+    &:hover {
+      background-color: rgba(48, 62, 88, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &.prev {
+      left: 20px;
+    }
+
+    &.next {
+      right: 20px;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+}

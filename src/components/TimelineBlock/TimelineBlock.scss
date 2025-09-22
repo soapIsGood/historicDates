@@ -1,0 +1,123 @@
+.timelineBlock {
+  position: relative;
+  width: 1440px;
+  height: 1080px;
+  margin: 0 auto;
+  background: #fff;
+
+  .line {
+    position: absolute;
+    background-color: darkblue;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 3;
+
+    &.vertical {
+      width: 1px;
+      height: 100%;
+      top: 0;
+
+      &.left {
+        left: 0;
+      }
+
+      &.center {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.right {
+        left: 100%;
+        transform: translateX(-100%);
+      }
+    }
+
+    &.horizontal {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  .circle-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .years {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px;
+    height: 160px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: -2px;
+    gap: 60px;
+    font-weight: 700;
+
+    .startYear {
+      color: #5d5fef;
+    }
+
+    .endYear {
+      color: #ef5da8;
+    }
+  }
+
+  .events {
+    position: absolute;
+    top: calc(50% + 361px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .historical-line-wrapper {
+    position: absolute;
+    top: calc(25% - 60px);
+    left: 0;
+    display: flex;
+    align-items: center;
+
+    .historical-line {
+      width: 4px;
+      height: 120px;
+      background: linear-gradient(to bottom, #3877ee, #ef5da8);
+      border-radius: 2px;
+    }
+
+    .historical-text {
+      padding-left: 78px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 120px;
+      font-family: 'PT Sans', sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      color: #1e3a8a;
+      line-height: 120%;
+      max-width: 353px;
+    }
+  }
+
+  .timelineControlsWrapper {
+    position: absolute;
+    left: 80px;
+    top: calc(50% + 250px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+  }
+}

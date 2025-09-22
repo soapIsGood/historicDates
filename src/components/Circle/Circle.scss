@@ -1,0 +1,56 @@
+.Circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .circle {
+    position: relative;
+    width: 503px;
+    height: 503px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+
+    transform: rotate(var(--circle-rotation, 0deg));
+    transform-origin: 50% 50%;
+  }
+
+  .point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: darkblue;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-weight: 500;
+
+    .point-wrapper {
+      transform: rotate(calc(-1 * var(--circle-rotation, 0deg)));
+    }
+
+    .label {
+      display: none;
+      color: darkblue;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &.active {
+      width: 56px;
+      height: 56px;
+      background: #f4f5f9;
+      border: 1px solid rgba(48, 62, 88, 0.5);
+
+      .label {
+        display: block;
+      }
+    }
+  }
+}
